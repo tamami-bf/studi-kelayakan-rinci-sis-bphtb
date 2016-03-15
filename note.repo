@@ -1,0 +1,3 @@
+repository lokal untuk ini adalah StdiLykRinciSisBphtb
+jadi kalo add remote pake ini :
+git remote add StdiLykRinciSisBphtb git@github.com:tamami/studi-kelayakan-rinci-sis-bphtb.git

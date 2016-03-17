@@ -167,9 +167,55 @@ dimana n adalah jumlah \textit{host}
 dimana n adalah jumlah \textit{host}
 \end{enumerate}
 
-Ini akan lebih efektif dan efisien apabila digunakannya \textit{switch} sebagai penghubung atau pengatur lalu lintas data antar \textit{host}.
+Ini akan lebih efektif dan efisien apabila digunakannya \textit{switch} sebagai penghubung atau pengatur lalu lintas data antar \textit{host}. Sebagai contoh bila ada 2 (dua) \textit{host} yang akan dihubungkan dengan jaringan menggunakan \textit{switch} ini, maka diperlukan 1 (satu) buah \textit{switch}, 2 (dua) buah kabel jaringan (UTP), dan 2 (dua) buah kartu jaringan. Bagaimana bila 3 (tiga) atau lebih \textit{host} akan dihubungkan dalam sebuah jaringan yang sama, maka cukup menggunakan 1 (satu) buah \textit{switch}, n buah kabel jaringan (UTP) dan n buah kartu jaringan sebanyak jumlah \textit{host} yang ingin dihubungkan. Tentunya model \textit{switch} perlu disesuaikan jumlah \textit{port} dengan jumlah \textit{host} yang akan dihubungkan.
+
+\textit{Switch} ini selain menjadikan jaringan komputer lebih efektif dan efisien, juga mengatur lalu lintas data secara lebih baik (dibandingkan \textit{hub}). Salah satu kelebihan yang dimiliki \textit{switch} dibanding \textit{hub} adalah data akan disampaikan tepat kepada alamat yang dituju, sehingga pertukaran data nyaris aman dalam jalur komunikasinya, sedangkan \textit{hub} lebih rentan karena setiap data yang terkirim dan dilewatkan melalui \textit{hub} maka alat ini akan menyebarkan berita ke setiap \textit{host} yang terhubung dengan \textit{hub} yang kemudian diserahkan kepada kartu jaringan apakah data yang diterima sesuai dengan alamat yang dimiliki atau tidak. Dalam kondisi ini, keamanan data akan terlalu berresiko saat terjadi komunikasi.
+
+\textit{Switch} ini pun tidak perlu membeli karena sudah terpasang pada sistem yang lama sebagai penghubung antar 1 (satu) \textit{host} dengan \textit{host} yang lain.
+
+  \item \textit{Router}
+  
+Alat ini dalam istilah lain juga disebut \textit{gateway}, yaitu sebuah jembatan yang menghubungkan 2 (dua) atau lebih jaringan yang berbeda, cara kerja alat ini yaitu dengan memiliki peta \textit{routing} yang diprogram, peta inilah yang dibaca oleh \textit{router} kemana paket data yang diterima harus dikirimkan, apabila tujuan paket data hanya dikirimkan untuk \textit{host} yang berada di jaringan lokal, maka \textit{router} tidak akan mengirimkan paket datanya keluar, melainkan akan dikirim ke alamat yang berada di dalam, tetapi bila tujuan paket data berada di luar jaringan, maka paket tersebut akan dikirimkan ke jaringan lain dalam lingkupnya, atau diteruskan ke \textit{router} lain yang menghubungkan jaringan diluar lingkupnya. 
+
+Tentunya cara kerja tersebut diatas dengan konfigurasi peta jaringan yang sebelumnya sudah diatur dalam \textit{router}. Dan biasanya, pada setiap \textit{router} terdapat \textit{firewall} yang akan memberikan proteksi atau aturan-aturan komunikasi, dimana tidak semua data dapat diteruskan ke jaringan lain diluarnya, tetapi harus memenuhi persyaratan yang ditetapkan dalam tabel \textit{firewall}.
+
+Jaringan internal Bidang PBB dan BPHTB terdiri dari 2 (dua) jaringan lokal, yaitu jaringan lokal untuk nirkabel di alamat 192.168.3.0/24 dan jaringan lokal dengan kabel (UTP) di alamat 192.168.2.0/24, komunikasi antar kedua jaringan lokal ini dijembatani oleh sebuah \textit{router} yang juga memberikan filter terhadap permintaan data yang masuk ke server. Sebagai contoh, \textit{router} ini pula yang meneruskan data dari internet yang akan mengakses ke server web aplikasi milik bidang PBB dan BPHTB.
+
+Sehingga, biaya untuk pengadaan \textit{router} sendiri tidak diperlukan, karena sudah terpasang dan sudah digunakan untuk kegiatan komunikasi data pada jaringan yang sebelumnya.
+
+  \item \textit{Modem}
+  
+Fungsi dari \textit{modem} yaitu untuk menghubungkan 2 (dua) atau lebih media jaringan yang berbeda sehingga data dapat dikomunikasikan pada jaringan yang berbeda media tersebut. Sebagai contoh, karena bidang PBB dan BPHTB menggunakan akses \textit{fiber optic} dari jaringan internet, dan jaringan internal menggunakan kabel UTP, maka dibutuhkan \textit{modem} untuk menerjemahkan data yang melintas melalui 2 (dua) media jaringan ini.
+
+Karena \textit{modem} ini sudah digunakan pada sistem jaringan sebelumnya, maka tidak perlu dibeli.
 
 \end{enumerate}.
+
+Sehingga kebutuhan perangkat keras secara keseluruhan sebetulnya tidak perlu mengeluarkan biaya tambahan lain karena perangkat-perangkat tersebut sudah tersedia dan cukup untuk mengakomodir berjalannya sistem informasi yang nantinya akan dibangun.
+
+Kemudian, untuk sarana dan prasarana jenis perangkat lunak yang dibutuhkan yaitu :
+
+\begin{enumerate}[1.]
+  \item Perangkat Lunak Sistem Operasi
+  
+
+
+  \item Perangkat Lunak Basis Data
+  
+  \item Perangkat Lunak Web Server
+  
+  \item Perangkat Lunak Desain Aplikasi
+  
+  \item Perangkat Lunak \textit{Integrated Development Environment} (IDE)
+  
+  \item Perangkat Lunak Manajemen Basis Data
+  
+  \item \textit{Framework} ZKOSS
+  
+  \item \textit{Framework} Hibernate
+  
+  \item Pustaka \textit{Driver} Java Database Connection (JDBC)
+\end{enumerate}
 
 \section{SUMBER DAYA MANUSIA YANG TERLIBAT DALAM PENGOLAHAN DATA}
 

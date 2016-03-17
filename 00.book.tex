@@ -26,6 +26,7 @@
 \usepackage{float}
 \usepackage{gensymb}  
 \usepackage{listings}
+\usepackage{mathtools} % atau \usepackage{amsmath}
 %\usepackage{siunitx}
 % etc.
 % see the list of further useful packages
@@ -103,8 +104,72 @@ Pengumpulan bahan-bahan hasil produksi pencatatan yang dilakukan secara manual d
 
 \section{SARANA DAN PRASARANA YANG MELIPUTI PERANGKAT KERAS DAN PERANGKAT LUNAK YANG DIPERLUKAN}
 
+Kebutuhan akan sarana dan prasarana untuk jenis perangkat keras yaitu :
 
+\begin{enumerate}[1.]
+  \item Server Basis Data
+  
+Server ini berfungsi untuk menyimpan basis data hasil \textit{entry}, untuk nantinya dapat diakses oleh server aplikasi web (\textit{web app server}) yang dapat dikembangkan bukan hanya sebagai alat untuk \textit{entry} data BPHTB, melainkan dapat menampilkan informasi-informasi lain seperti statistik pelayanan, ataupun kondisi pelaporan lain.
 
+Kebutuhan perangkat keras server ini tidak perlu membeli karena nantinya akan menggunakan server yang sudah ada sebagai server virtualisasi. Karena \textit{resource} simpanan data pada server virtualisasi masih cukup luas dan penggunaannya hanya dilakukan pada saat cetak massal Surat Pemberitahuan Pajak Terhutang (SPPT) Pajak Bumi dan Bangunan Perdesaan dan Perkotaan (PBB-P2).
+
+Jadi server vertualisasi ini akan memiliki beberapa personal komputer virtual didalamnya yang memiliki alamat IP (\textit{Internet Protocol}) mandiri yang dapat diakses dan mengakses jaringan komputer, karena bentuknya adalah personal komputer, maka disana dapat dipasang (\textit{di-install}) aplikasi SISMIOP yang kemudian tentu saja personal komputer virtual ini akan mengakses \textit{printer} untuk melakukan cetak SPPT PBB-P2 di awal tahun.
+
+  \item Server Web Aplikasi
+  
+Server ini akan digunakan sebagai tempatnya aplikasi web, jadi setiap personal komputer yang akan melakukan \textit{entry} data, atau mengakses informasi dari data-data yang tersimpan di server basis data akan membuka aplikasi yang disediakan oleh \textit{server} ini.
+  
+Server ini pun tidak perlu membeli karena nantinya akan menggunakan server rekonsiliasi penerimaan PBB-P2. Alasan digunakannya server rekonsiliasi penerimaan ini, karena hanya digunakan 1 (satu) jam setiap harinya untuk melakukan \textit{entry} data pembayaran secara otomatis ke server basis data SISMIOP, maka masih banyak \textit{resource} dari server ini yang belum dimanfaatkan secara optimal, sehingga masih dapat digunakan sebagai server 
+
+  \item Personal Komputer
+  
+Personal komputer diperlukan untuk mengakses server web aplikasi. Tentunya personal komputer yang dapat mengakses server web aplikasi adalah yang terhubung dengan jaringan baik menggunakan kabel jaringan maupun nirkabel. 
+
+Aplikasi web ini pun nantinya dapat diakses melalui jaringan internet melalui personal komputer diluar jaringan lokal Dinas Pendapatan dan Pengelolaan Keuangan. Tujuan dibukanya akses ini ke internet tentu dengan beberapa pembatasan informasi seperti hanya dapat melihat informasi apakah berkas pengajuan pelayanan sudah dapat diambil atau belum, atau informasi yang menyatakan bahwa berkas pengajuan pelayanan BPHTB sedang dalam kondisi ditunda karena beberapa alasan.
+
+Personal komputer yang digunakan untuk tujuan \textit{entry} data ini tidak perlu membeli karena layanan sebelumnya (pelayanan dan pencatatan administrasi manual) sudah menggunakan personal komputer dengan aplikasi Microsoft Office, hanya saja pada saat menggunakan sistem informasi yang akan dibangun ini, nantinya personal komputer yang ada cukup menggunakan \textit{browser} untuk dapat mengakses ke server web aplikasi.
+
+  \item Kartu Jaringan
+  
+Kartu jaringan digunakan atau dipasangkan pada personal komputer agar personal komputer dapat terhubung dengan jaringan. Tentunya salah satu fungsi dari kabel jaringan ini adalah agar personal komputer yang ada dapat terhubung dengan server aplikasi web.
+
+Kartu ini tidak perlu membeli karena sudah terpasang sebelumnya ditiap personal komputer yang ada, entah sebagai \textit{file sharing} atau sebelumnya pernah melakukan akses SISMIOP atau digunakan untuk mengakses internet.
+
+  \item Kabel Unshielded Twisted Pair (UTP)
+  
+Kabel ini terdiri dari 4 (empat) pasang warna yang digunakan sebagai penghubung atau media komunikasi antar kartu jaringan yang terdapat pada tiap personal komputer agar personal komputer dapat saling mengakses data.
+
+Kabel ini juga tidak perlu membeli karena dari sistem yang terpasang sebelumnya (pada saat pencatatan administrasi BPHTB secara manual), kabel ini pun sudah terpasang dan saling menghubungkan antara 1 (satu) personal komputer dengan personal komputer yang lain, dengan server, atau dengan printer.
+
+  \item Konektor RJ45
+  
+Konektor ini digunakan atau dipasangkan pada kabel UTP agar kabel UTP dapat dipasangkan pada kartu jaringan di tiap personal komputer. Masing-masing helai kabel UTP akan terpasang pada tiap pin yang ada pada konektor RJ45, yang kemudian apabila konektor RJ45 dipasangkan pada kartu jaringan, masing-masing pin pada kartu jaringan akan terhubung dengan pin pada RJ45 sehingga aliran data dapat disampaikan dari 1 (satu) personal komputer ke personal komputer yang lain. Dengan kata lain, tiap personal komputer akan saling terhubung.
+
+  \item \textit{Switch}
+  
+Masing-masing komponen yang terkoneksi / terhubung ke jaringan biasa diistilahkan sebagai \textit{host}, tentunya untuk membuat agar 1 (satu) \textit{host} terhubung dengan 1 (satu) \textit{host} yang lain maka diperlukan sebuah kartu di masing-masing \textit{host} dan sebuah kabel jaringan yang sudah terpasang konektor RJ45. Akan menjadi masalah apabila ada lebih dari 2 (dua) \textit{host} yang perlu terhubung. Rumusnya akan menjadi demikian :
+
+\begin{enumerate}[a.]
+  \item Untuk mengetahui jumlah kebutuhan kartu jaringan yaitu menggunakan rumus :
+
+\begin{equation}
+  jumlah kartu jaringan = n(n-1)
+\end{equation}
+
+dimana n adalah jumlah \textit{host}
+  
+  \item Sedangkan untuk mengetahui jumlah kabel jaringan yaitu menggunakan rumus :
+  
+\begin{equation}
+  jumlah kabel jaringan = \frac{n(n-1)}{2}
+\end{equation}
+  
+dimana n adalah jumlah \textit{host}
+\end{enumerate}
+
+Ini akan lebih efektif dan efisien apabila digunakannya \textit{switch} sebagai penghubung atau pengatur lalu lintas data antar \textit{host}.
+
+\end{enumerate}.
 
 \section{SUMBER DAYA MANUSIA YANG TERLIBAT DALAM PENGOLAHAN DATA}
 

@@ -286,21 +286,55 @@ Karena server yang digunakan aplikasi web yang dibangun berbasis \textit{servlet
   
   \item \textit{Framework} Hibernate
   
+\textit{Framework} Hibernate ini digunakan sebagai pengatur atau penerjemah dari bahasa Java ke bahasa SQL. Biasa disebut Object Relational Mapping (ORM) karena cara kerjanya adalah dengan membuat kelas-kelas yang merupakan pemetaan (\textit{mapping}) dari tabel-tabel yang terdapat dalam sistem basis data, yang nantinya, pada saat aplikasi akan berhubungan dengan basis data, cukup berurusan dengan kelas-kelas \textit{mapping} ini melalui \textit{framework} Hibernate, kemudian \textit{framework} Hibernate akan menerjemahkan perintah-perintah bahasa pemrograman Java tersebut menjadi SQL untuk diteruskan ke server basis data.
 
+\textit{Framework} Hibernate ini pun gratis untuk digunakan sehingga tidak perlu mengeluarkan biaya lagi untuk pengadaannya, cukup unduh dari alamat http://hibernate.org/org, dan pasangkan pada aplikasi yang akan kita bangun.
   
   \item Pustaka \textit{Driver} Java Database Connection (JDBC)
+  
+Pustaka \textit{driver} JDBC diperlukan sebagai jembatan antara kode aplikasi yang dibangun dengan data yang berada dalam sistem basis data. \textit{Driver} JDBC ini spesifik dan berbeda untuk tiap sistem basis data, karena sistem basis data yang digunakan adalah Postgresql, maka \textit{driver} yang diperlukan adalah \textit{driver} untuk basis data postgresql yang dapat diunduh di alamat https://jdbc.postgresql.org.
+
+Biasanya tiap-tiap sistem basis data akan menyediakan \textit{driver} JDBC masing-masing sebagai salah satu bentuk dukungan bahwa sistem basis data tersebut mampu ikut terintegrasi bersama aplikasi yang dibangun dengan bahasa pemrograman Java.
+
+Lisensi untuk pustaka \textit{driver} JDBC ini pun gratis sehingga tidak perlu mengeluarkan biaya untuk pengadaannya.
+
 \end{enumerate}
 
 \section{SUMBER DAYA MANUSIA YANG TERLIBAT DALAM PENGOLAHAN DATA}
 
+Sumber daya manusia yang terlibat dalam pengolahan data BPHTB tidak banyak, yaitu petugas yang berfungsi di pelayanan untuk menerima dan memberikan berkas pelayanan ke wajib pajak atau kuasanya, kemudian ada Kepala Seksi Pendataan yang melakukan kontrol berkas, apakah perlu dilakukan pemeriksaan lapangan, atau cukup dilakukan pemeriksaan kantor saja. Kemudian ada Kepala Bidang PBB dan BPHTB yang melakukan tanda tangan dilembar Surat Setoran Pajak Daerah (SSPD) BPHTB sebagai tanda legal bahwa berkas pengajuan tersebut sudah dilakukan verifikasi data tanpa adanya nilai yang kurang bayar.
+
+Bila Kepala Bidang PBB dan BPHTB sedang berhalangan hadir untuk lebih dari 3 (tiga) hari, maka tanda tangan Kepala Dinas akan menggantikan posisi Kepala Bidang PBB dan BPHTB pada lembar SSPD BPHTB sebagai tanda legal bahwa berkas pengajuan tersebut sudah terverifikasi.
+
+Sumber daya manusia lain yang melakukan pengolahan data terhadap pengelolaan BPHTB yaitu petugas yang mencatat penerimaan yang dilaporkan dari bank tempat pembayaran sehingga realisasinya dapat dihitung apakah mencapai target realisasi, atau kurang dari target realisasi, atau melebihi target realisasi.
+
+Ada pula sumber daya manusia yang melakukan kontrol terhadap laporan Pejabat Pembuat Akta Tanah/Pejabat Pembuat Akta Tanah Sementara (PPAT/PPATS), Notaris, dan Kepala Kantor Pelayanan Lelang Negara. Dalam sisi hukumnya, sebagaimana tertuang pada Pasal 92 Undang Undang Nomor 28 Tahun 2009 tentang Pajak Daerah dan Retribusi Daerah, bahwa setiap PPAT/Notaris, dan Kepala Kantor yang membidangi pelayanan lelang negara wajib melaporkan pembuatan akta atau risalah lelang kepada Kepala Daerah dalam hal ini Bupati Brebes paling lambat tanggal 10 (sepuluh) bulan berikutnya, apabila PPAT/Notaris, atau kepala kantor yang membidangi pelayanan lelang negara melanggar Pasal tersebut maka akan dikenakan sanksi administrasi sebagaimana tersebut pada Pasal 93 Undang Undang Nomor 28 Tahun 2009 tentang Pajak Daerah dan Retribusi Daerah.
+
+SDM yang lain yaitu personal yang melakukan cek fisik di lokasi tempat objek BPHTB dialihkan. Hasil dari pengecekan fisik sendiri berupa rekomendasi nilai yang sebenarnya atau nilai pasar yang seharusnya dilaporkan pada lembar SSPD BPHTB.
 
 \section{ORGANISASI SISTEM PENGOLAHAN}
 
+Organisasi sistem pengolahan pada pengelolaan BPHTB cukup sederhana karena memang tujuan pengelolaannya berpangkal pada pencatatan data dan verifikasi data.
+
+Dari sisi paling depan ada bagian yang menjalankan fungsi pelayanan BPHTB, fungsi ini menjalankan tugasnya untuk menerima berkas pelayanan BPHTB dari wajib pajak atau kuasanya dan menyerahkan berkas hasil verifikasi BPHTB kepada wajib pajak atau kuasanya. bagian ini pula yang akan memeriksa kelengkapan berkas pengajuan pelayanan BPHTB, apabila berkas sudah lengkap maka akan dicatatkan dan diteruskan ke bagian berikutnya, namun apabila ada kelengkapan berkas yang kurang maka berkas akan dikembalikan atau ditunda untuk diproses.
+
+Bagian berikutnya adalah Kepala Seksi Pendataan, Penetapan dan Keberatan yang akan melakukan seleksi berkas apakah diperlukan pemeriksaan fisik di lokasi objek berada, atau cukup dilakukan pemeriksaan kantor. Apabila dirasa informasi yang berada pada lembar SSPD BPHTB yang dilaporkan oleh wajib pajak atau kuasanya adalah benar, maka Kepala Seksi Pendataan, Penetapan dan Keberatan akan memberikan paraf pada lembar SSPD BPHTB untuk selanjutnya disampaikan kebagian yang lain. 
+
+Setelah Kepala Seksi Pendataan, Penetapan dan Keberatan meletakkan paraf pada lembar SSPD BPHTB, maka bagian berikutnya yang dituju berkas adalah Kepala Bidang PBB dan BPHTB, Kepala Bidang pun akan melakukan pemeriksaan isian lembar SSPD BPHTB, apabila dirasa benar, maka Kepala Bidang akan memberikan tanda tangan pada lembar tersebut dan berkas diteruskan ke bagian pelayanan, namun apabila ada kejanggalan pada lembar SSPD BPHTB yang diisikan oleh wajib pajak atau kuasanya, maka sebelum berkas diberikan tanda tangan, berkas akan diberikan kepada bagian pemeriksaan lapangan untuk dilakukan pengecekan fisik.
+Apabila Kepala Bidang PBB dan BPHTB berhalangan untuk hadir selama atau lebih dari 3 (hari), maka kewenangan pemberian tanda tangan pada lembar SSPD BPHTB dilakukan oleh Kepala Dinas.
+
+Bagian berikutnya adalah petugas pemeriksa lapangan yang melakukan pemeriksaan fisik terhadap objek BPHTB yang dilakukan peralihan. Petugas inilah yang nantinya akan memberikan nilai rekomendasi kepada Kepala Seksi Pendataan, Penetapan, dan Keberatan atau Kepala Bidang PBB dan BPHTB terhadap objek yang diperiksanya. Bila rekomendasi tersebut diambil oleh Kepala Seksi atau Kepala Bidang, maka yang biasanya berlaku adalah bagian pelayanan akan mengeluarkan Surat Tagihan Pajak untuk diberikan kepada wajib pajak atau kuasanya agar melunasi besarnya kurang bayar BPHTB yang dilaporkan kepada bank tempat pembayaran agar berkas tersebut dapat diverifikasi kebenaran datanya.
 
 \section{WAKTU DAN BIAYA YANG DIBUTUHKAN DALAM PEMBUATAN/PENGEMBANGAN SISTEM PENGOLAHAN DATA SECARA MENYELURUH}
 
+Dari sisi biaya, maka tidak diperlukan pengeluaran biaya untuk pembuatan / pengembangan sistem ini karena sebetulnya seluruh perangkat keras sudah terpasang dan berjalan normal, dan dari pengadaan perangkat lunak pun semuanya menggunakan versi gratis.
+
+Sedangkan dari waktu yang dibutuhkan, akan tergambar dari diagram Gantt berikut :
+
+
 
 \section{MANFAAT DAN DAMPAK PENGOLAHAN DATA}
+
 
 
 \end{document}

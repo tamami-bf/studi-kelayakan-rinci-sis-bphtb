@@ -212,17 +212,81 @@ Pilihan jatuh kepada perangkat lunak basis data Postgresql, yang tentu saja grat
   
   \item Perangkat Lunak Web Server
   
-Perangkat lunak \textit{web server} digunakan untuk menjalankan atau menyediakan aplikasi web yang telah dibuat yaitu sistem informasi BPHTB, perangkat lunak ini berbeda dengan \textit{web server} yang 
+Perangkat lunak \textit{web server} digunakan untuk menjalankan atau menyediakan aplikasi web yang telah dibuat yaitu sistem informasi BPHTB, perangkat lunak ini berbeda dengan \textit{web server} yang digunakan untuk aplikasi web berbasis bahasa pemrograman PHP. Perangkat lunak \textit{web server} yang digunakan harus mendukung \textit{servlet} atau \textit{web container}.
+
+Alasan kenapa dipilih server yang mendukung \textit{servlet} atau \textit{web container} karena memiliki beberapa kelebihan seperti berikut ini :
+
+    \begin{enumerate}[a.]
+      \item Efisien dan baik dalam \textit{performance}
+      
+      \textit{Performance servlet} dapat dikatakan efisien dan baik karena tidak ada proses pembuatan berulang untuk tiap \textit{request} dari \textit{client}. Setiap \textit{request} ditangani oleh proses \textit{servlet container}. \textit{Servlet} tidak dibuat dan dihancurkan secara berulang-ulang, melainkan tetap tersimpan pada memori untuk menangani \textit{request} yang datang selanjutnya.
+      
+      \item \textit{Powerful}
+      
+      \textit{Servlet} memiliki kemampuan yang lengkap antara lain mampu melakukan penanganan \textit{request}, \textit{session}, \textit{cookie}, akses ke basis data dengan JDBC dan \textit{caching}, serta pustaka yang lengkap untuk pembuatan aplikasi web.
+      
+      \item Aman
+      
+      \textit{Servlet} memiliki fasilitas \textit{security} yang baik dan merupakan bagian dari teknologi Java yang sudah dari asalnya didesain dengan \textit{security} yang baik.
+      
+      \item Portabilitas
+      
+      Teknologi Java \textit{servlet} dapat dijalankan di berbagai \textit{servlet container}, \textit{application server}, maupun sistem operasi.
+      
+      \item Proses \textit{development} yang lebih cepat
+      
+      Dengan menggunakan \textit{servlet}, kita dapat menggunakan pustaka Java yang lengkap dan menggunakan komponen yang sudah ada tanpa membangun dari awal kembali.
+      
+      \item Tangguh
+      
+      \textit{Servlet} merupakan teknologi Java yang memiliki penanganan \textit{memory} yang baik dan \textit{garbage collector} sehingga menjadi aplikasi web yang tangguh dan stabil.
+      
+      \item Telah digunakan dan diakui di dunia
+      
+      \textit{Servlet} merupakan teknologi Java yang telah digunakan di berbagai belahan dunia. Dapat ditemukan berbagai komponen, solusi, dan dukungan yang ditawarkan baik secara gratis maupun komersial.
+      
+      \item Murah
+      
+      Dikatakan murah karena JDK Java dapat diunduh secara gratis, begitupun dengan \textit{servlet container}.
+    \end{enumerate}
+
+Pemilihan perangkat lunak \textit{web server} yang mendukung \textit{servlet} ini pun tidak perlu mengeluarkan biaya, cukup menggunakan Apache Tomcat yang memberikan lisensi gratis dalam penggunaannya, dengan konfigurasi yang tepat, maka \textit{web server} Apache Tomcat ini cukup untuk melayani permintaan aplikasi dari beberapa \textit{client} sekaligus. Sehingga untuk pengadaan perangkat lunak \textit{web server} ini pun tidak memerlukan tambahan biaya.
   
   \item Perangkat Lunak Desain Aplikasi
   
+Perangkat lunak desain aplikasi digunakan untuk membuat desain pembangunan aplikasi, mulai dari desain struktur basis data, desain Unified Modeling Language (UML) yang digunakan untuk membuat spesifikasi standar untuk mendokumentasikan, menspesifikan, dan membangun sistem perangkat lunak, desain UML sendiri dapat menggambarkan atau memodelkan diagram struktur aplikasi dan diagram sifat atau cara kerja aplikasi.
+
+Perangkat lunak untuk desain aplikasi ini pun tidak perlu mengeluarkan biaya tambahan, ada perangkat lunak untuk desain aplikasi yang gratis dan disediakan oleh \textit{repository}  Ubuntu yang bernama Dia.
+
+Aplikasi Dia ini memiliki fasilitas bukan hanya untuk membuat desain UML atau struktur basis data, melainkan dapat pula untuk membuat desain jaringan komputer, desain rangkaian elektronik, dan beberapa desain lain sebagaimana terdapat pada halaman \textit{repository} Dia di alamat http://dia-installer.de/shapes/index.html.en.
+  
   \item Perangkat Lunak \textit{Integrated Development Environment} (IDE)
   
+Perangkat lunak IDE ini digunakan untuk membangun aplikasi web, baik dari sisi tampilan \textit{user interface} maupun dari sisi kode. Pengujian \textit{unit testing} pun dapat dilakukan dengan menggunakan perangkat lunak ini.
+
+Beberapa pilihan untuk perangkat lunak IDE ini pun beragam dan banyak yang menyediakannya secara gratis. Sebagai contoh adalah Netbeans dan Eclipse. Untuk pengembangan aplikasi ini dipilih Eclipse karena tersedianya beragam \textit{plugins} sebagai pendukung dalam membangun sebuah aplikasi.
+
+Dengan kata lain, untuk pengadaan perangkat lunak IDE ini pun tidak perlu mengeluarkan biaya tambahan.
+  
   \item Perangkat Lunak Manajemen Basis Data
+ 
+Perangkat lunak manajemen basis data digunakan untuk membangun struktur basis data dengan lebih mudah, biasanya disertai dengan \textit{wizard} yang memandu pengguna untuk membentuk sebuah sistem basis data. Perangkat lunak ini pun dapat digunakan untuk menguji kebenaran kode Structured Query Language (SQL) yaitu kode yang digunakan untuk mengolah data yang berada pada sistem basis data.
+
+Karena basis data yang digunakan adalah Postgresql, maka perangkat lunak untuk manajemen basis data yang digunakan adalah pgAdmin, aplikasi ini pun memiliki lisensi gratis, sehingga tidak perlu lagi mengeluarkan biaya tambahan untuk pengadaannya.
   
   \item \textit{Framework} ZKOSS
   
+Karena server yang digunakan aplikasi web yang dibangun berbasis \textit{servlet}, dan bahasa pemrograman yang digunakan \textit{servlet} berbasis Java, maka perlu ditentukan \textit{framework} yang cocok untuk membangun aplikasi dengan lebih cepat dan terstruktur.
+
+\textit{Framework} sendiri merupakan sekumpulan pustaka yang dapat digunakan oleh \textit{developer} untuk mempermudah dalam membangun suatu aplikasi.
+
+\textit{Framework} ZKOSS sebetulnya dalam pengembangan aplikasi web berbasis komponen, persis seperti apa yang ditawarkan oleh IDE untuk membangun sebuah aplikasi \textit{desktop}. Membangun sebuah aplikasi web dengan ZKOSS dipermudah dengan cara menempelkan beberapa komponen seperti \textit{button}, \textit{text area}, dan beberapa \textit{container} untuk menata tampilan, kemudian dihubungkan dengan logika kode program untuk membuatnya bekerja.
+
+\textit{Framework} ZKOSS ini menawarkan beberapa jenis paket diantaranya \textit{Community Edition} yang cukup untuk mengakomodir aplikasi yang akan dibangun, harga untuk jenis paket \textit{Community Edition} ini pun gratis, sehingga tidak memerlukan biaya tambahan untuk pengadaannya.
+  
   \item \textit{Framework} Hibernate
+  
+
   
   \item Pustaka \textit{Driver} Java Database Connection (JDBC)
 \end{enumerate}
